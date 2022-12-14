@@ -1,0 +1,13 @@
+---
+
+# Generic
+generic:
+  role: ansible-role-cfg2html
+  role_short: cfg2html
+  role_description: |
+    Installs cfg2html
+  collections: []
+
+molecule:
+  requirements:
+    roles_extra: []

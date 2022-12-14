@@ -1,0 +1,22 @@
+---
+
+- name: Distribute package
+  ansible.builtin.copy:
+    src: files/{{ cfg2html_package }}
+    dest: /tmp/{{ cfg2html_package }}
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Install package (Debian)
+  ansible.builtin.apt:
+    deb: /tmp/{{ cfg2html_package }}
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Install package (RedHat)
+  ansible.builtin.yum:
+    name: /tmp/{{ cfg2html_package }}
+    state: present
+    disable_gpg_check: true
+  when: ansible_os_family == 'RedHat'

@@ -1,0 +1,27 @@
+---
+
+- name: Run cfg2html  # noqa command-instead-of-shell
+  ansible.builtin.shell: /usr/sbin/cfg2html
+  args:
+    executable: /bin/bash
+  changed_when: true
+  become: yes
+  tags: molecule-idempotence-notest
+
+- name: Create host directory
+  ansible.builtin.file:
+    path: "{{ cfg2html_local_root }}/{{ inventory_hostname }}"
+    state: directory
+    mode: "0750"
+  become: false
+  delegate_to: localhost
+
+- name: Retrieve files
+  ansible.builtin.fetch:
+    src: "{{ cfg2html_remote_root }}/{{ item }}"
+    dest: "{{ cfg2html_local_root }}/{{ inventory_hostname }}/{{ item }}"
+    flat: yes
+  loop:
+    - "{{ ansible_hostname }}.html"
+    - "{{ ansible_hostname }}.txt"
+    - "{{ ansible_hostname }}.err"

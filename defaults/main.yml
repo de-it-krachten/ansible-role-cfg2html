@@ -1,0 +1,7 @@
+---
+
+# Location where cfg2html will write output to
+cfg2html_remote_root: /var/log/cfg2html
+
+# Location where output is stored on central server
+cfg2html_local_root: /var/log/cfg2html-central
