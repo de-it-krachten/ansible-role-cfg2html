@@ -5,15 +5,15 @@
   args:
     executable: /bin/bash
   changed_when: true
-  become: yes
+  become: true
   tags: molecule-idempotence-notest
 
 - name: Create host directory
   ansible.builtin.file:
     path: "{{ cfg2html_local_root }}/{{ inventory_hostname }}"
     state: directory
-    mode: "0750"
-  become: false
+    mode: "0755"
+  become: true
   delegate_to: localhost
 
 - name: Retrieve files
@@ -21,6 +21,7 @@
     src: "{{ cfg2html_remote_root }}/{{ item }}"
     dest: "{{ cfg2html_local_root }}/{{ inventory_hostname }}/{{ item }}"
     flat: yes
+  become: true
   loop:
     - "{{ ansible_hostname }}.html"
     - "{{ ansible_hostname }}.txt"

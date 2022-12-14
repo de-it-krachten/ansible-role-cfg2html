@@ -1,5 +1,13 @@
 ---
 
-- ansible.builtin.include_tasks: vars.yml
-- ansible.builtin.include_tasks: install.yml
-- ansible.builtin.include_tasks: execute.yml
+# Load OS specific vars
+- name: Load variables based on OS type
+  ansible.builtin.include_tasks: vars.yml
+
+# Install phase
+- name: Install cfg2html
+  ansible.builtin.include_tasks: install.yml
+
+# Execution phase
+- name: Config cfg2html
+  ansible.builtin.include_tasks: execute.yml
