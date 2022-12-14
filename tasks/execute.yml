@@ -1,7 +1,11 @@
 ---
 
+- name: Get date stamp
+  ansible.builtin.set_fact:
+    datestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
+
 - name: Run cfg2html  # noqa command-instead-of-shell
-  ansible.builtin.shell: /usr/sbin/cfg2html
+  ansible.builtin.shell: /usr/sbin/cfg2html -2{{ datestamp }}
   args:
     executable: /bin/bash
   changed_when: true
@@ -12,6 +16,8 @@
   ansible.builtin.file:
     path: "{{ cfg2html_local_root }}/{{ inventory_hostname }}"
     state: directory
+    owner: "{{ lookup('pipe', 'id -un') }}"
+    group: "{{ lookup('pipe', 'id -gn') }}"
     mode: "0755"
   become: true
   delegate_to: localhost
@@ -21,8 +27,8 @@
     src: "{{ cfg2html_remote_root }}/{{ item }}"
     dest: "{{ cfg2html_local_root }}/{{ inventory_hostname }}/{{ item }}"
     flat: yes
-  become: true
+  become: false
   loop:
-    - "{{ ansible_hostname }}.html"
-    - "{{ ansible_hostname }}.txt"
-    - "{{ ansible_hostname }}.err"
+    - "{{ ansible_hostname }}_{{ datestamp }}.html"
+    - "{{ ansible_hostname }}_{{ datestamp }}.txt"
+    - "{{ ansible_hostname }}_{{ datestamp }}.err"
