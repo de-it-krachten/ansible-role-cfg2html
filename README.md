@@ -22,7 +22,7 @@ Supported platforms
 - Red Hat Enterprise Linux 8<sup>1</sup>
 - Red Hat Enterprise Linux 9<sup>1</sup>
 - RockyLinux 8<sup>1</sup>
-- RockyLinux 9<sup>1</sup>
+- RockyLinux 9
 - OracleLinux 8<sup>1</sup>
 - OracleLinux 9<sup>1</sup>
 - AlmaLinux 8<sup>1</sup>

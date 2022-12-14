@@ -42,7 +42,7 @@ platforms:
     ci: false
     supported: true
   rockylinux9:
-    ci: false
+    ci: true
     supported: true
   oraclelinux8:
     ci: false

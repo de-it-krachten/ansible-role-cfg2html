@@ -1,4 +1,6 @@
 ---
 
+- name: rockylinux9
+  image: geerlingguy/docker-rockylinux9-ansible:latest
 - name: ubuntu2204
   image: geerlingguy/docker-ubuntu2204-ansible:latest
