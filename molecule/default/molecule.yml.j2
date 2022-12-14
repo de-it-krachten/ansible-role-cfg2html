@@ -24,7 +24,7 @@ platforms:
 {% endif %}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
-    cgroupns_mode: host
+    cgroupns: host
 {% if platform.volumes is defined %}
 {% for volume in platform.volumes %}
       - cfg2html-{{ volume }}
