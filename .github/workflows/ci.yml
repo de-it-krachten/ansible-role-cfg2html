@@ -134,127 +134,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: centos7_2.9
-            distro: centos7
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: centos7_2.13
-            distro: centos7
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: rockylinux8_2.9
-            distro: rockylinux8
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: rockylinux8_2.13
-            distro: rockylinux8
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: rockylinux9_2.9
-            distro: rockylinux9
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: rockylinux9_2.13
-            distro: rockylinux9
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: oraclelinux8_2.9
-            distro: oraclelinux8
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: oraclelinux8_2.13
-            distro: oraclelinux8
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: oraclelinux9_2.9
-            distro: oraclelinux9
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: oraclelinux9_2.13
-            distro: oraclelinux9
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: almalinux8_2.9
-            distro: almalinux8
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: almalinux8_2.13
-            distro: almalinux8
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: almalinux9_2.9
-            distro: almalinux9
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: almalinux9_2.13
-            distro: almalinux9
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: debian10_2.9
-            distro: debian10
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: debian10_2.13
-            distro: debian10
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: debian11_2.9
-            distro: debian11
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: debian11_2.13
-            distro: debian11
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: ubuntu1804_2.9
-            distro: ubuntu1804
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: ubuntu1804_2.13
-            distro: ubuntu1804
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: ubuntu2004_2.9
-            distro: ubuntu2004
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: ubuntu2004_2.13
-            distro: ubuntu2004
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
           - name: ubuntu2204_2.9
             distro: ubuntu2204
             playbook: converge.yml
@@ -262,28 +141,6 @@ jobs:
             ansible_lint: "ansible-lint==5.4.0"
           - name: ubuntu2204_2.13
             distro: ubuntu2204
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: fedora35_2.9
-            distro: fedora35
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: fedora35_2.13
-            distro: fedora35
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
-          - name: fedora36_2.9
-            distro: fedora36
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: fedora36_2.13
-            distro: fedora36
             playbook: converge.yml
             ansible: "ansible-core>2.13,<2.14"
             ansible_lint: "ansible-lint>6,<7"
@@ -296,6 +153,13 @@ jobs:
         with:
           path: "${{ github.repository }}"
 
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+        with:
+          ## limits ssh access and adds the ssh public key for the user which triggered the workflow
+          limit-access-to-actor: true
+          ## limits ssh access and adds the ssh public keys of the listed GitHub users
+          # limit-access-to-users: mark-it-kracht
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -379,4 +243,5 @@ jobs:
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
           MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
+          MOLECULE_WAIT_AFTER_ERROR: '900'
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
