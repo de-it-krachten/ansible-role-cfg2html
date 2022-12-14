@@ -315,7 +315,7 @@ jobs:
 
       - name: Install test dependencies.
         run: |
-          pip3 install "${{ matrix.ansible }}" "${{ matrix.ansible_lint }}" molecule[docker] molecule-hetznercloud docker yamllint jmespath e2j2 yq
+          pip3 install "${{ matrix.ansible }}" "${{ matrix.ansible_lint }}" molecule[docker] yamllint jmespath e2j2 yq
 
       - name: Install required galaxy collections
         run: |

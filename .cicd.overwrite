@@ -8,6 +8,10 @@ generic:
     Installs cfg2html
   collections: []
 
+# Github:
+#   ssh_access: true
+
+# Molecule
 molecule:
   requirements:
     roles_extra: []
