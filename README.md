@@ -50,16 +50,16 @@ cfg2html_remote_root: /var/log/cfg2html
 cfg2html_local_root: /var/log/cfg2html-central
 </pre></code>
 
-### defaults/family-RedHat.yml
-<pre><code>
-# Package name for RedHat/CentOS/Rocky
-cfg2html_package: cfg2html-6.43.2.0.gacc0b2d-1.git202211281609.noarch.rpm
-</pre></code>
-
 ### defaults/family-Debian.yml
 <pre><code>
 # Package name for Debian/Ubuntu
 cfg2html_package: cfg2html_6.41.1_all.deb
+</pre></code>
+
+### defaults/family-RedHat.yml
+<pre><code>
+# Package name for RedHat/CentOS/Rocky
+cfg2html_package: cfg2html-6.43.2.0.gacc0b2d-1.git202211281609.noarch.rpm
 </pre></code>
 
 
