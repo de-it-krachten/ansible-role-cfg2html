@@ -20,3 +20,10 @@
     state: present
     disable_gpg_check: true
   when: ansible_os_family == 'RedHat'
+
+- name: Install package (Suse)
+  community.general.zypper:
+    name: /tmp/{{ cfg2html_package }}
+    state: present
+    disable_gpg_check: true
+  when: ansible_os_family == 'Suse'
