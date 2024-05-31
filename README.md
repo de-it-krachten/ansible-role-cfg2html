@@ -31,13 +31,13 @@ Supported platforms
 - AlmaLinux 9
 - SUSE Linux Enterprise 15<sup>1</sup>
 - openSUSE Leap 15
-- Debian 10 (Buster)<sup>1</sup>
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 37
-- Fedora 38
+- Ubuntu 24.04 LTS
+- Fedora 39
+- Fedora 40
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -55,13 +55,19 @@ cfg2html_local_root: /var/log/cfg2html-central
 ### defaults/family-Debian.yml
 <pre><code>
 # Package name for Debian/Ubuntu
-cfg2html_package: cfg2html_6.41.1_all.deb
+cfg2html_package: cfg2html_7.0.1_all.deb
 </pre></code>
 
 ### defaults/family-RedHat.yml
 <pre><code>
 # Package name for RedHat/CentOS/Rocky
-cfg2html_package: cfg2html-6.43.2.0.gacc0b2d-1.git202211281609.noarch.rpm
+cfg2html_package: cfg2html-7.0.1.1.gb8c7a98-1.git202303291751.noarch.rpm
+</pre></code>
+
+### defaults/family-Suse.yml
+<pre><code>
+# Package name for RedHat/CentOS/Rocky
+cfg2html_package: cfg2html-7.0.1.1.gb8c7a98-1.git202303291751.noarch.rpm
 </pre></code>
 
 
@@ -72,7 +78,7 @@ cfg2html_package: cfg2html-6.43.2.0.gacc0b2d-1.git202211281609.noarch.rpm
 <pre><code>
 - name: sample playbook for role 'cfg2html'
   hosts: all
-  become: "yes"
+  become: 'yes'
   tasks:
     - name: Include role 'cfg2html'
       ansible.builtin.include_role:
