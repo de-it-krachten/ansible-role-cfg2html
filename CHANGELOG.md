@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.1.1...v1.2.0) (2024-06-04)
+
+
+### Features
+
+* Add support for Ubuntu 24.04 LTS + Fedora 40 ([7dcbcec](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/7dcbcec1cc1aec62ca9222557c0f6f7e105e0a6d))
+
 ## [1.1.1](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.1.0...v1.1.1) (2023-09-08)
 
 
