@@ -8,6 +8,15 @@ generic:
     Installs cfg2html
   collections: []
 
+# Platforms
+platforms:
+  opensuse15:
+    ci: false
+    supported: false
+  sles15:
+    ci: false
+    supported: false
+
 # Github:
 #   ssh_access: true
 

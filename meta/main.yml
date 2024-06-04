@@ -14,12 +14,8 @@ galaxy_info:
         - '7'
         - '8'
         - '9'
-    - name: opensuse
-      versions:
-        - all
     - name: Debian
       versions:
-        - buster
         - bullseye
         - bookworm
     - name: Ubuntu
