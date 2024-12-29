@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.2.0...v1.3.0) (2024-12-29)
+
+
+### Features
+
+* Update supported platforms & CI ([99c2c59](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/99c2c591af47bb0d3b139c7d7c946cc0f3867197))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.1.1...v1.2.0) (2024-06-04)
 
 
