@@ -15,7 +15,7 @@
   when: ansible_os_family == 'Debian'
 
 - name: Install package (RedHat)
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: /tmp/{{ cfg2html_package }}
     state: present
     disable_gpg_check: true
