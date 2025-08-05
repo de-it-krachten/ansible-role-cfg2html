@@ -13,7 +13,7 @@ Installs cfg2html
 None
 
 #### Collections
-- community.general
+None
 
 ## Platforms
 
@@ -46,6 +46,15 @@ Note:
 ## Role Variables
 ### defaults/main.yml
 <pre><code>
+# cfg2html version
+cfg2html_version: 7.2.1
+
+# cfg2html source
+cfg2html_source_archive: https://github.com/cfg2html/cfg2html/archive/refs/tags/{{ cfg2html_version }}.tar.gz
+
+# cfg2html root location
+cfg2html_root: /opt/cfg2html
+
 # Location where cfg2html will write output to
 cfg2html_remote_root: /var/log/cfg2html
 

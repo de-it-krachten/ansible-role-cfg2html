@@ -5,7 +5,7 @@
     datestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
 
 - name: Run cfg2html  # noqa command-instead-of-shell
-  ansible.builtin.shell: /usr/sbin/cfg2html -2{{ datestamp }}
+  ansible.builtin.shell: /opt/cfg2html/cfg2html -2{{ datestamp }}
   args:
     executable: /bin/bash
   changed_when: true
