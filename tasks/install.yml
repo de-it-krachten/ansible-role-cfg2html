@@ -1,29 +1,14 @@
 ---
 
-- name: Distribute package
-  ansible.builtin.copy:
-    src: files/{{ cfg2html_package }}
-    dest: /tmp/{{ cfg2html_package }}
-    owner: root
-    group: root
-    mode: "0644"
+- name: Unarchive cfg2html source archive
+  ansible.builtin.unarchive:
+    src: "{{ cfg2html_source_archive }}"
+    dest: "{{ cfg2html_root | dirname }}"
+    remote_src: yes
 
-- name: Install package (Debian)
-  ansible.builtin.apt:
-    deb: /tmp/{{ cfg2html_package }}
-    state: present
-  when: ansible_os_family == 'Debian'
-
-- name: Install package (RedHat)
-  ansible.builtin.yum:
-    name: /tmp/{{ cfg2html_package }}
-    state: present
-    disable_gpg_check: true
-  when: ansible_os_family == 'RedHat'
-
-- name: Install package (Suse)
-  community.general.zypper:
-    name: /tmp/{{ cfg2html_package }}
-    state: present
-    disable_gpg_check: true
-  when: ansible_os_family == 'Suse'
+- name: Create symlink to latest version
+  ansible.builtin.command:
+    cmd: ln -fs cfg2html-{{ cfg2html_version }} cfg2html
+  args:
+    chdir: "{{ cfg2html_root | dirname }}"
+  changed_when: no
