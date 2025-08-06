@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.3.0...v1.4.0) (2025-08-06)
+
+
+### Features
+
+* Add support for AlmaLinux 10 ([6cb45fa](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/6cb45fa9c171308808b45f3c848674fc54e9f4de))
+* Add support for Debian 13 (Trixie) ([866b084](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/866b084392554f989ba60a76a46023a0d4b4cf06))
+* Add support for OracleLinux 10 ([dfcc65d](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/dfcc65d5e3e794f5d1bd474c67abf2154c964b4a))
+* Add support for Red Hat Enterprise Linux 10 ([7968ae4](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/7968ae4ee8d63b1785725edf63bf9201aa798a46))
+* Add support for RockyLinux 10 ([e469253](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/e46925376b456e19e53fd0a2af55f1e268aeb899))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.2.0...v1.3.0) (2024-12-29)
 
 
