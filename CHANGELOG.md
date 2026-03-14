@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.4.0...v1.5.0) (2026-03-14)
+
+
+### Features
+
+* Added support for Fedora 43 ([2cd3ffb](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/2cd3ffbe2a820f9804dd940d3c0657bf4fc30ded))
+* Drop support for Fedora 41 ([58fab69](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/58fab69869beed8ed322fcb35fcce4e25cc3be50))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.3.0...v1.4.0) (2025-08-06)
 
 
