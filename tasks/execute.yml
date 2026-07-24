@@ -29,6 +29,6 @@
     flat: yes
   become: false
   loop:
-    - "{{ ansible_hostname }}_{{ datestamp }}.html"
-    - "{{ ansible_hostname }}_{{ datestamp }}.txt"
-    - "{{ ansible_hostname }}_{{ datestamp }}.err"
+    - "{{ ansible_facts.hostname }}_{{ datestamp }}.html"
+    - "{{ ansible_facts.hostname }}_{{ datestamp }}.txt"
+    - "{{ ansible_facts.hostname }}_{{ datestamp }}.err"
