@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.6.0...v1.7.0) (2026-10-13)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([3c4759d](https://github.com/de-it-krachten/ansible-role-cfg2html/commit/3c4759d060bce172784656a7dd6a181674d5603a))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-cfg2html/compare/v1.5.0...v1.6.0) (2026-07-26)
 
 
