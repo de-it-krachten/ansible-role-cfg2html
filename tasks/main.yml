@@ -11,3 +11,4 @@
 # Execution phase
 - name: Config cfg2html
   ansible.builtin.include_tasks: execute.yml
+  when: cfg2html_execute | bool
