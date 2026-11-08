@@ -1,7 +1,7 @@
 ---
 
 # cfg2html version
-cfg2html_version: 7.2.1
+cfg2html_version: 7.3.1
 
 # cfg2html source
 cfg2html_source_archive: https://github.com/cfg2html/cfg2html/archive/refs/tags/{{ cfg2html_version }}.tar.gz
